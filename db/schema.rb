@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_24_041422) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_24_042013) do
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "body", null: false
     t.text "comment"
@@ -18,6 +18,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_24_041422) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "themes_id", null: false
+    t.index ["themes_id"], name: "index_posts_on_themes_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -37,5 +39,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_24_041422) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "posts", "themes", column: "themes_id"
   add_foreign_key "posts", "users"
 end
