@@ -1,2 +1,18 @@
-<h1>StaticPages#top</h1>
-<p>Find me in app/views/static_pages/top.html.erb</p>
+<div class="hero bg-base-200 min-h-screen">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Hello there</h1>
+      <p class="py-6">
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      </p>
+      <div class='text-center'>
+        <%= link_to 'さっそく挑戦する', login_path, class:"btn btn-primary" %>
+      </div>
+      <p>or</p>
+      <div class='text-center'>
+        <%= link_to '思い出を投稿する', new_post_path, class:"btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
