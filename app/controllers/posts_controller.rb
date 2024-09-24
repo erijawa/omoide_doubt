@@ -6,9 +6,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to root_path, success: "思い出を投稿しました"
     else
-      render :new
+      flash.now[:danger] = '投稿に失敗しました'
+      render :new, status: :unprocessable_entity
     end
   end
 
