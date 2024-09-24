@@ -1,0 +1,22 @@
+<div class="container">
+      <h1>思い出投稿</h1>
+      <%= form_with model: @post do |f| %>
+        <div class="mb-4">
+          <%= f.label :theme_id %>
+          <%= f.select :theme, class: "select select-bordered w-full max-w-xs" %>
+        </div>
+        <div class="mb-4">
+          <%= f.label :body%>
+          <%= f.text_area :body, class: "textarea textarea-bordered" %>
+        </div>
+        <div class="mb-4">
+          <%= f.label :comment%>
+          <%= f.text_area :body, class: "textarea textarea-bordered" %>
+        </div>
+        <%= f.submit "登録", class: "btn btn-primary" %>
+      <% end %>
+      <div class='text-center'>
+        <%= link_to 'ログインページへ', login_path %>
+      </div>
+
+</div>
