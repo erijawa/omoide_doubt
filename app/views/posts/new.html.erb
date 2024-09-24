@@ -2,7 +2,7 @@
       <h1>思い出投稿</h1>
       <%= form_with model: @post do |f| %>
         <div class="mb-4">
-          <%= f.collection_select :theme_id, Theme.all, :id, :name, include_blank: "テーマを選んでください", class: "select select-bordered w-full max-w-xs" %>
+          <%= f.collection_select :themes_id, Theme.all, :id, :name, include_blank: "テーマを選んでください", class: "select select-bordered w-full max-w-xs" %>
         </div>
         <div class="mb-4">
           <%= f.label :body %>

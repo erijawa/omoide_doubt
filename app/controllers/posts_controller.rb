@@ -15,12 +15,12 @@ class PostsController < ApplicationController
   def show
     random_num = Post.pluck(:id).sample
     @random_post = Post.find(random_num)
-    @theme = Theme.find(@random_post.theme_id)
+    @theme = Theme.find(@random_post.themes_id)
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:body, :comment, :answer)
+    params.require(:post).permit(:body, :comment, :answer, :themes_id)
   end
 end
