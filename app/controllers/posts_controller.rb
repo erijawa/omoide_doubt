@@ -14,8 +14,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    random_num = Post.pluck(:id).sample
-    @random_post = Post.find(random_num)
+    @post = Post.find(params[:id])
   end
 
   private

@@ -1,7 +1,8 @@
 <div class="container">
   <h1>思い出ダウト！</h1>
-  <p><%=  @theme %>にまつわる<%=  @random_post.user.name %>さんの思い出です</p>
-  <%=  @random_post.body %>
+  <p><%=  @post.user.name %>さんの思い出です</p>
+  <%= image_tag @post.post_image_url, class: "card-img-top", width: "300", height:"200" %>
+  <%=  @post.body %>
   <p>この思い出、ほんと？</p>
   <button class="btn btn-primary">ほんと</button>
   <button class="btn btn-primary">ダウト！</button>
