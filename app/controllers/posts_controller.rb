@@ -17,6 +17,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def replace
+    @post = Post.find(params[:id])
+    render layout: false, content_type: 'text/vnd.turbo-stream.html'
+  end
+
   private
 
   def post_params
