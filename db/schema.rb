@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_25_020209) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_25_062052) do
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "body", null: false
     t.text "comment"
@@ -29,6 +29,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_25_020209) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "url"
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
