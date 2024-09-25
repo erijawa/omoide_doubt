@@ -2,19 +2,17 @@
       <h1>思い出投稿</h1>
       <%= form_with model: @post do |f| %>
         <div class="mb-4">
-          <%= f.collection_select :themes_id, Theme.all, :id, :name, include_blank: "テーマを選んでください", class: "select select-bordered w-full max-w-xs" %>
+          <%= f.collection_select :themes_id, Theme.all, :id, :name, {prompt: "テーマを選んでください"}, {class: "select select-bordered w-full max-w-xs"} %>
         </div>
         <div class="mb-4">
-          <%= f.label :body %>
-          <%= f.text_area :body, class: "textarea textarea-bordered" %>
+          <%= f.text_area :body, class: "textarea textarea-bordered w-full max-w-xs", placeholder: "テーマにまつわる思い出、または作り話を語ってください。" %>
         </div>
         <div class="mb-4">
-          <%= f.label :comment %>
-          <%= f.text_area :body, class: "textarea textarea-bordered" %>
+          <%= f.text_area :body, class: "textarea textarea-bordered w-full max-w-xs", placeholder: "捕捉コメントがあれば教えてください。" %>
         </div>
         <div class="mb-4">
-        <%= f.label :answer %>
-          <%= f.select :answer, options_for_select([["本当の話", true], ["ダウト（作り話）", false]]), options = { include_blank: true }, class: "select select-bordered w-full max-w-xs" %>
+
+          <%= f.select :answer, options_for_select([["本当の話", true], ["ダウト（作り話）", false]]), options = { include_blank: "真偽を選んでね" }, class: "select select-bordered w-full max-w-xs" %>
         </div>
         <%= f.submit "登録", class: "btn btn-primary" %>
       <% end %>

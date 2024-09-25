@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  skip_before_action :require_login, only: %i[show new create]
+  skip_before_action :require_login, only: %i[show]
   def new
     @post = Post.new
   end
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to root_path, success: "思い出を投稿しました"
     else
