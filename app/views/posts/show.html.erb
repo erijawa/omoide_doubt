@@ -1,8 +1,17 @@
 <div class="container">
   <h1>思い出ダウト！</h1>
-  <p><%=  @theme %>にまつわる<%=  @random_post.user.name %>さんの思い出です</p>
-  <%=  @random_post.body %>
-  <p>この思い出、ほんと？</p>
-  <button class="btn btn-primary">ほんと</button>
-  <button class="btn btn-primary">ダウト！</button>
+  <p><%=  @post.user.name %>さんの思い出です</p>
+  <div>
+  <%= image_tag @post.post_image_url, class: "block mx-auto", width: "300", height:"200" %>
+  </div>
+  <%=  @post.body %>
+  <%= turbo_frame_tag 'answer' do %>
+    <p>この思い出、ほんと？</p>
+
+    <%= turbo_frame_tag 'replace' do %>
+      <%= link_to 'ほんと', replace_post_path, class: "btn btn-primary" %>
+      <%= link_to 'ダウト！', replace_post_path, class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+  
 </div>

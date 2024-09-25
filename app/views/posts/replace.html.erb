@@ -1,0 +1,15 @@
+<%= turbo_stream.replace "answer" do %>
+  <%= turbo_frame_tag 'post' do %>
+    <p>正解は…</p>
+    <p>
+    <%= @post.answer %>
+    </p>
+    <p>
+    <%= @post.comment %>
+    </p>
+    <p></p>
+    <p>
+    <%= @post.user.name %>
+    </p>
+  <% end %>
+<% end  %>

@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  skip_before_action :require_login, only: %i[show new create]
+  skip_before_action :require_login, only: %i[show]
   def new
     @post = Post.new
   end
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to root_path, success: "思い出を投稿しました"
     else
@@ -14,14 +14,17 @@ class PostsController < ApplicationController
   end
 
   def show
-    random_num = Post.pluck(:id).sample
-    @random_post = Post.find(random_num)
-    @theme = Theme.find(@random_post.themes_id)
+    @post = Post.find(params[:id])
+  end
+
+  def replace
+    @post = Post.find(params[:id])
+    render layout: false, content_type: 'text/vnd.turbo-stream.html'
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:body, :comment, :answer, :themes_id)
+    params.require(:post).permit(:body, :comment, :answer, :post_image)
   end
 end
