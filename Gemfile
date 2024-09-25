@@ -39,6 +39,9 @@ gem "bootsnap", require: false
 # ログイン機能
 gem 'sorcery', '0.16.3'
 
+# 画像アップロード
+gem 'carrierwave', '2.2.2'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
