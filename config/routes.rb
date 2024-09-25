@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   root "static_pages#top"
 
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create edit update show]
   resources :posts, only: %i[new create show] do
     get "replace", on: :member
   end

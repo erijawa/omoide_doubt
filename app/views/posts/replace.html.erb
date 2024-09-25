@@ -10,8 +10,10 @@
     <p></p>
     <p>
     <%= @post.user.name %>
+    
     </p>
 
     
   <% end %>
+  <%= link_to "投稿者はこちら", user_path(@post.user) %>
 <% end  %>

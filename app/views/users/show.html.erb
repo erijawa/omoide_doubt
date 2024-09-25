@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @user.name %></h1>
+  <p><%=@user.bio %></p>
+  <% if @user.url %>
+    <%= link_to "ソーシャルポートフォリオはこちら", "#{@user.url}", class: "btn btn-accent" %>
+  <% end %>
+
+  <% if current_user && current_user.id == params[:id] %>
+    <%= link_to "編集", edit_user_path(@user), class: "btn btn-primary" %>
+  <% end%>
+</div>
