@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="mx-auto">
+      <h1>ユーザー編集</h1>
+      <%= form_with model: @user do |f| %>
+        <div class="mb-4">
+          <span class="label-text block text-secondary text-left">*必須</span>
+          <%= f.text_field :name, class: "input input-bordered w-full", placeholder: "お名前" %>
+        </div>
+        <div class="mb-4">
+        <span class="label-text block text-secondary text-left">*必須</span>
+          <%= f.email_field :email, class: "input input-bordered w-full", placeholder: "メールアドレス" %>
+        </div>
+        <div class="mb-4">
+        <span class="label-text block text-secondary text-left">*必須</span>
+          <%= f.password_field :password, class: "input input-bordered w-full", placeholder: "パスワード" %>
+        </div>
+        <div class="mb-4">
+        <span class="label-text block text-secondary text-left">*必須</span>
+          <%= f.password_field :password_confirmation, class: "input input-bordered w-full", placeholder: "パスワード確認" %>
+        </div>
+
+        <div class="mb-4">
+        <span class="label-text block text-left">RUNTEQソーシャルポートフォリオURLをみんなに共有できます</span>
+          <%= f.text_field :url, class: "input input-bordered w-full", placeholder: "RUNTEQソーシャルポートフォリオURL" %>
+        </div>
+
+        <div class="mb-4">
+        <span class="label-text block text-left">自己紹介/一言コメント</span>
+          <%= f.text_area :bio, class: "textarea textarea-bordered w-full", placeholder: "簡単な自己紹介などにご利用ください！" %>
+        </div>
+
+        <%= f.submit "更新", class: "btn btn-primary" %>
+      <% end %>
+
+    </div>
+    <%= render 'shared/menu' %>
+</div>
+

@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(current_user.id)
     if @user.update(user_params)
       redirect_to user_path(@user), success: "ユーザー情報を更新しました"
     else
@@ -35,6 +36,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio, :url)
   end
 end

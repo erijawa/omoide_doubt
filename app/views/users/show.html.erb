@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="main-contents">
+  <h1><%= @user.name %></h1>
+  <p><%= @user.bio %></p>
+  <% if @user.url %>
+    <%= link_to "ソーシャルポートフォリオはこちら", "#{@user.url}", class: "btn btn-accent mt-8" %>
+  <% end %>
+  </div>
+  <% if current_user && current_user.id == params[:id] %>
+    <%= link_to "編集", edit_user_path(current_user.id), class: "btn btn-primary" %>
+  <% end%>
+  <%= render 'shared/menu' %>
+</div>
