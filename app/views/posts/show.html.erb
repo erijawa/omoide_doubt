@@ -14,6 +14,9 @@
       <%= link_to 'ダウト！', replace_post_path, class: "btn btn-primary mx-2" %>
     <% end %>
  
+  <div class="mt-8 text-center">
+    <%= link_to 'Xでシェアする', "https://twitter.com/share?url=#{request.url}&text= #{@post.user.name}さんの思い出クイズに挑戦しました！&hashtags=ミニアプリウィーク,思い出ダウト", title: 'Twitter', target: '_blank', class: "btn" %>
+  </div>
   <div>
   <%= link_to "TOPにもどる", root_path, class: "btn btn-neutral mt-12" %>
   </div>
