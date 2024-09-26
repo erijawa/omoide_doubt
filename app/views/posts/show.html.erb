@@ -7,7 +7,8 @@
   <p class="text-xl my-8">
   <%=  @post.body %>
   </p>
-    <p class="mb-6">この思い出、ほんと？</p>
+  <p class="mb-6">この思い出、ほんと？</p>
+  <%= link_to "削除", post_path(@post), data: { turbo_method: :delete }  %>
 
     <%= turbo_frame_tag 'replace' do %>
       <%= link_to 'ほんと！', replace_post_path, class: "btn btn-primary mx-2" %>

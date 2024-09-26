@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root "static_pages#top"
 
   resources :users, only: %i[new create edit update show]
-  resources :posts, only: %i[new create show] do
+  resources :posts, only: %i[new create show destroy] do
     get "replace", on: :member
   end
   get "login", to: "user_sessions#new"

@@ -22,6 +22,12 @@ class PostsController < ApplicationController
     render layout: false, content_type: 'text/vnd.turbo-stream.html'
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy!
+    redirect_to root_path, success: "成功！", status: :see_other
+  end
+
   private
 
   def post_params
