@@ -7,8 +7,8 @@
     <% else %>
       <p class="text-xl mb-8">ダウト(作り話)！</p>
     <% end %>
-    <% if @post.comment %>
-    <div class="answer-comment">
+    <% if @post.comment.present? %>
+      <div class="answer-comment">
     <p><%= @post.comment %></p>
     </div>
     <% end %>
