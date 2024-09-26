@@ -1,5 +1,5 @@
-<%= turbo_stream.replace "answer" do %>
-  <%= turbo_frame_tag 'post' do %>
+<%= turbo_stream.replace "replace" do %>
+  
     <p>正解は…</p>
     <p>
     <%= @post.answer %>
@@ -14,6 +14,6 @@
     </p>
 
     
-  <% end %>
+  
   <%= link_to "投稿者はこちら", user_path(@post.user) %>
 <% end  %>
