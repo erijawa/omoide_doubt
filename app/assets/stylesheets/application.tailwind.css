@@ -12,8 +12,10 @@ h1 {
   font-size: 30px;
   margin: 20px 0;
 }
-.btn-logout {
+.top-menu {
+  display: flex;
+  flex-direction: row-reverse;
   position:fixed;
-  top:5px;
-  right:5px;
+  top:0;
+  right:0;
 }
