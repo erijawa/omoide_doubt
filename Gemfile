@@ -40,7 +40,7 @@ gem "bootsnap", require: false
 gem 'sorcery', '0.16.3'
 
 # 画像アップロード
-gem 'carrierwave', '2.2.2'
+gem 'carrierwave', '3.0.7'
 gem 'cloudinary'
 
 # OGP画像
