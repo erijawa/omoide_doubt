@@ -3,15 +3,15 @@
     <p class="mb-8">正解は…</p>
     
     <% if @post.answer %>
-      <p class="text-xl mb-8">本当の話！</p>
+      <p class="text-xl mb-8 text-bold">本当の話！</p>
     <% else %>
-      <p class="text-xl mb-8">ダウト(作り話)！</p>
+      <p class="text-xl mb-8 text-bold">ダウト(作り話)！</p>
     <% end %>
     <% if @post.comment.present? %>
       <div class="answer-comment">
     <p><%= @post.comment %></p>
     </div>
     <% end %>
-  <%= link_to "投稿者の情報はこちら", user_path(@post.user), class:"btn btn-secondary mt-10" %>
+  <%= link_to "投稿者の情報はこちら", user_path(@post.user), class:"btn btn-secondary mt-14" %>
 
 <% end  %>
