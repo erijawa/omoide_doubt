@@ -1,19 +1,20 @@
 <%= turbo_stream.replace "replace" do %>
   
-    <p>正解は…</p>
-    <p>
-    <%= @post.answer %>
-    </p>
-    <p>
+    <p class="mb-8">正解は…</p>
+    
+    <% if @post.answer %>
+      <p class="text-xl mb-8">本当の話！</p>
+    <% else %>
+      <p class="text-xl mb-8">ダウト(作り話)！</p>
+    <% end %>
+    
+    <p class="answer-comment">
     <%= @post.comment %>
     </p>
-    <p></p>
-    <p>
-    <%= @post.user.name %>
     
-    </p>
+  <%= link_to "投稿者の情報はこちら", user_path(@post.user), class:"btn btn-secondary" %>
 
-    
-  
-  <%= link_to "投稿者はこちら", user_path(@post.user) %>
+  <div class="mt-2 text-center">
+    <%= link_to 'Xでアプリをシェアする', "https://twitter.com/share?url=https://aichild-talk-2ce903ce7ec6.herokuapp.com/&text=3歳児の「なんで？」に答えましょう。あなたはどこまで説明できますか？&hashtags=ミニアプリウィーク", title: 'Twitter', target: '_blank', class: "btn" %>
+  </div>
 <% end  %>

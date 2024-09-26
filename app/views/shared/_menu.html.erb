@@ -1,6 +1,10 @@
 <% if logged_in? %>
   <div class ="top-menu">
-    <%= link_to 'Logout', logout_path, class: 'btn btn-ghost btn-logout', data: { turbo_method: :delete } %>
-    <%= link_to 'MyPage', user_path(current_user.id), class: 'btn btn-ghost btn-mypage' %>
+    <%= link_to 'Logout', logout_path, class: 'btn btn-ghost', data: { turbo_method: :delete } %>
+    <%= link_to 'MyPage', user_path(current_user.id), class: 'btn btn-ghost' %>
+  </div>
+<% else %>
+  <div class ="top-menu">
+    <%= link_to 'Login', login_path, class: 'btn btn-ghost' %>
   </div>
 <% end%>
