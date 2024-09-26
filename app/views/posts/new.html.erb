@@ -8,11 +8,10 @@
           <%= f.text_area :body, class: "textarea textarea-bordered w-full max-w-xs", placeholder: "テーマにまつわる思い出、または作り話を語ってください。" %>
         </div>
         <div class="mb-4">
-          <%= f.text_area :comment, class: "textarea textarea-bordered w-full max-w-xs", placeholder: "捕捉コメントがあれば教えてください。" %>
+          <%= f.select :answer, options_for_select([["本当の話", true], ["ダウト（作り話）", false]]), options = { include_blank: "真偽を選んでね" }, class: "select select-bordered w-full max-w-xs" %>
         </div>
         <div class="mb-4">
-
-          <%= f.select :answer, options_for_select([["本当の話", true], ["ダウト（作り話）", false]]), options = { include_blank: "真偽を選んでね" }, class: "select select-bordered w-full max-w-xs" %>
+          <%= f.text_area :comment, class: "textarea textarea-bordered w-full max-w-xs", placeholder: "答えに関して補足コメントがあればどうぞ！" %>
         </div>
         <%= f.submit "登録", class: "btn btn-primary" %>
       <% end %>
