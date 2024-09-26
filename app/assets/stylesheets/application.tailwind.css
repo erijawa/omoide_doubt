@@ -21,5 +21,29 @@ h1 {
 }
 
 .answer-comment {
-
+  position: relative;
+  padding:0.25em 1em;
+}
+.answer-comment:before,.answer-comment:after{ 
+  content:'';
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  display: inline-block;
+}
+.answer-comment:before{
+  border-left: solid 1px #5767bf;
+  border-top: solid 1px #5767bf;
+  top:0;
+  left: 0;
+}
+.answer-comment:after{
+  border-right: solid 1px #5767bf;
+  border-bottom: solid 1px #5767bf;
+  bottom:0;
+  right: 0;
+}
+.answer-comment p {
+  margin: 0; 
+  padding: 0;
 }

@@ -7,11 +7,11 @@
     <% else %>
       <p class="text-xl mb-8">ダウト(作り話)！</p>
     <% end %>
-    
-    <p class="answer-comment">
-    <%= @post.comment %>
-    </p>
-    
-  <%= link_to "投稿者の情報はこちら", user_path(@post.user), class:"btn btn-secondary" %>
+    <% if @post.comment %>
+    <div class="answer-comment">
+    <p><%= @post.comment %></p>
+    </div>
+    <% end %>
+  <%= link_to "投稿者の情報はこちら", user_path(@post.user), class:"btn btn-secondary mt-10" %>
 
 <% end  %>
