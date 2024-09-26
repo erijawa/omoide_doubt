@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サービス名 : 思い出ダウト！
+[![Image from Gyazo](https://i.gyazo.com/1e7f193cd708321686dcc27a8177dc53.png)](https://gyazo.com/1e7f193cd708321686dcc27a8177dc53)
 
-Things you may want to cover:
+[**思い出ダウト！**](https://omoidedoubt-0938134a9059.herokuapp.com/)
 
-* Ruby version
 
-* System dependencies
+## サービス概要
+みんなが投稿した思い出エピソードが本当の話かどうか判定するゲームアプリです。
 
-* Configuration
+## サービスへの想い
+思い出を共有することで、より深く自分のことを知ってもらったり、投稿を通してその人の意外性を発見したり、会話のきっかけを見つけてもらえたら嬉しいです。
 
-* Database creation
 
-* Database initialization
+## 機能
+クイズ機能
+- みんなの投稿がランダムにクイズ形式で表示されます。
+- クイズの解答は、Turboの機能を用い非同期でスムーズに表示されるようにしています。
+ログイン機能
+- ログインすると、思い出を投稿することができます。
+- プロフィールにはRUNTEQソーシャルポートフォリオのURLを設定することができます。
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+## 使用技術
+| 技術           | 詳細                                                      | 
+| -------------- | --------------------------------------------------------- | 
+| フロントエンド | HTML, CSS, JavaScript, Tailwind CSS 3.4.10, DaisyUI 4.12.10 | 
+| バックエンド   | Ruby 3.2.3, Rails 7.2.1                              | 
+| データベース   | MySQL                                                    | 
+| 認証           | Sorcery                                                          | 
+| デプロイ       | Heroku                                                  | 
+| バージョン管理 | Git, GitHub                                               | 
+| 開発環境       | Docker                                                    | 
+ 
+
