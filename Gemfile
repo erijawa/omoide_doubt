@@ -37,7 +37,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # ログイン機能
-gem 'sorcery', '0.16.3'
+gem 'sorcery', '0.17.0'
 
 # 画像アップロード
 gem 'carrierwave', '2.2.2'
